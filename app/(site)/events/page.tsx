@@ -24,7 +24,7 @@ export default async function EventsPage({
   return (
     <div className="mx-auto max-w-7xl section-x py-16 md:py-24">
       <header className="mb-12 md:mb-16">
-        <h1 className="text-balance text-5xl leading-tight text-foreground md:text-7xl">
+        <h1 className="font-display text-balance text-5xl leading-tight text-foreground md:text-7xl">
           האירועים של מניין
         </h1>
         <p className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground md:text-xl">

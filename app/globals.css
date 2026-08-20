@@ -5,33 +5,24 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
-  MINYAN custom brand fonts.
-  The live site uses two licensed faces: "Maragsa Display" (Latin display)
-  and "Romema Spitzer" (Hebrew). Those font files are not freely available,
-  so we register @font-face hooks here. Drop the licensed WOFF2/WOFF files
-  into /public/fonts using the exact names below and they will take over
-  automatically. Until then, the Frank Ruhl Libre fallback (loaded in
-  layout.tsx via next/font) renders the same editorial Hebrew-serif feel.
+  MINYAN custom brand fonts (the real licensed faces from the live site).
+  "Mugrabi" is the display face used for large headlines; "Romema Spitzer"
+  is the Hebrew text face used for body, navigation and event information.
+  Frank Ruhl Libre (loaded in layout.tsx via next/font) remains as a
+  graceful fallback while the WOFF2 loads.
 */
 @font-face {
-  font-family: 'Maragsa Display';
-  src: url('/fonts/maragsa-display.woff2') format('woff2'),
-    url('/fonts/maragsa-display.woff') format('woff');
+  font-family: 'Mugrabi';
+  src: url('/fonts/Mugrabi-Regular.woff2') format('woff2'),
+    url('/fonts/Mugrabi-Regular.woff') format('woff');
   font-weight: 400 700;
   font-display: swap;
 }
 @font-face {
   font-family: 'Romema Spitzer';
-  src: url('/fonts/romema-spitzer.woff2') format('woff2'),
-    url('/fonts/romema-spitzer.woff') format('woff');
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Romema Spitzer';
-  src: url('/fonts/romema-spitzer-bold.woff2') format('woff2'),
-    url('/fonts/romema-spitzer-bold.woff') format('woff');
-  font-weight: 700 900;
+  src: url('/fonts/RomemaSpitzer-Regular.woff2') format('woff2'),
+    url('/fonts/RomemaSpitzer-Regular.woff') format('woff');
+  font-weight: 400 900;
   font-display: swap;
 }
 
@@ -73,9 +64,9 @@
   --color-ink-foreground: var(--ink-foreground);
   --color-cream: var(--cream);
 
-  /* Fonts: Hebrew serif for everything, display face for Latin headlines */
-  --font-hebrew: var(--font-frank-ruhl), 'Romema Spitzer', 'Frank Ruhl Libre', serif;
-  --font-display: 'Maragsa Display', var(--font-frank-ruhl), 'Frank Ruhl Libre', serif;
+  /* Fonts: Romema Spitzer for Hebrew text, Mugrabi for display headlines */
+  --font-hebrew: 'Romema Spitzer', var(--font-frank-ruhl), 'Frank Ruhl Libre', serif;
+  --font-display: 'Mugrabi', 'Romema Spitzer', var(--font-frank-ruhl), 'Frank Ruhl Libre', serif;
   --font-sans: var(--font-hebrew);
   --font-serif: var(--font-hebrew);
 

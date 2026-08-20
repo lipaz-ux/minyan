@@ -19,7 +19,7 @@ export function Hero() {
 
       <div className="relative mx-auto w-full max-w-7xl section-x pb-16 md:pb-24">
         <p className="text-lg text-ink-foreground/85 md:text-xl">{hero.eyebrow}</p>
-        <h1 className="mt-3 max-w-4xl text-balance text-5xl leading-[1.05] text-ink-foreground md:text-7xl lg:text-8xl">
+        <h1 className="font-display mt-3 max-w-4xl text-balance text-5xl leading-[1.05] text-ink-foreground md:text-7xl lg:text-8xl">
           {hero.title}
         </h1>
 

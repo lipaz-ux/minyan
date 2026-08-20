@@ -18,7 +18,7 @@ export function Founder() {
 
         <div className="flex flex-col">
           <p className="text-lg text-accent">{founder.title}</p>
-          <h2 className="mt-2 text-balance text-4xl text-foreground md:text-5xl">
+          <h2 className="font-display mt-2 text-balance text-4xl text-foreground md:text-5xl">
             {founder.name}
           </h2>
           <div className="mt-6 flex flex-col gap-5">

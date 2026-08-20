@@ -33,7 +33,7 @@ export function Worlds() {
               <p className="text-xl leading-relaxed text-accent md:text-2xl">
                 {world.source}
               </p>
-              <h2 className="mt-4 text-balance text-4xl leading-tight text-foreground md:text-5xl">
+              <h2 className="font-display mt-4 text-balance text-4xl leading-tight text-foreground md:text-5xl">
                 {world.title}
               </h2>
               <p className="mt-5 text-pretty text-lg leading-relaxed text-muted-foreground">

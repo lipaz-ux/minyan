@@ -14,7 +14,7 @@ export function NewsletterSignup() {
   return (
     <section className="bg-background">
       <div className="mx-auto max-w-3xl section-x py-20 text-center md:py-28">
-        <h2 className="text-balance text-4xl text-foreground md:text-5xl">
+        <h2 className="font-display text-balance text-4xl text-foreground md:text-5xl">
           {newsletter.title}
         </h2>
         <p className="mt-4 text-pretty text-lg leading-relaxed text-muted-foreground">

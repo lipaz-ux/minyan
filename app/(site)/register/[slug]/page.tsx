@@ -34,7 +34,7 @@ export default async function RegisterPage({
       </Link>
 
       <header className="mt-6">
-        <h1 className="text-balance text-4xl leading-tight text-foreground md:text-5xl">
+        <h1 className="font-display text-balance text-4xl leading-tight text-foreground md:text-5xl">
           {waitlist ? 'הצטרפות לרשימת המתנה' : 'הרשמה לאירוע'}
         </h1>
         <p className="mt-3 text-xl text-foreground">{event.title_he}</p>

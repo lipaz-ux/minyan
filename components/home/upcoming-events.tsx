@@ -11,7 +11,7 @@ export function UpcomingEvents() {
     <section className="bg-secondary/50">
       <div className="mx-auto max-w-7xl section-x py-20 md:py-28">
         <div className="flex items-end justify-between gap-4">
-          <h2 className="text-balance text-4xl text-foreground md:text-5xl">
+          <h2 className="font-display text-balance text-4xl text-foreground md:text-5xl">
             האירועים הקרובים
           </h2>
           <Link

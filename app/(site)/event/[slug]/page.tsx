@@ -71,7 +71,7 @@ export default async function EventPage({
       <div className="mx-auto max-w-3xl section-x">
         <header className="-mt-16 relative">
           <p className="text-accent">{category?.label_he}</p>
-          <h1 className="mt-2 text-balance text-4xl leading-tight text-foreground md:text-6xl">
+          <h1 className="font-display mt-2 text-balance text-4xl leading-tight text-foreground md:text-6xl">
             {event.title_he}
           </h1>
           <p className="mt-4 text-pretty text-xl leading-relaxed text-muted-foreground">
