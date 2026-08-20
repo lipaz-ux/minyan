@@ -183,3 +183,9 @@ export interface RegistrationFormData {
   coupon_code?: string
   marketing_opt_in: boolean
 }
+
+// Prices are stored in ILS (agorot-free whole shekels for Phase 1).
+export function formatPrice(price: number): string {
+  if (!price || price <= 0) return 'ללא עלות'
+  return `${price} ₪`
+}
