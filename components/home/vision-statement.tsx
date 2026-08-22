@@ -34,7 +34,7 @@ export function VisionStatement() {
         sizes="100vw"
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/55 to-ink/80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ink/80 via-ink/68 to-ink/88" />
 
       <div className="relative mx-auto max-w-2xl section-x py-16 text-center md:py-20">
         <p

@@ -13,7 +13,7 @@ export function PrivateExperiences() {
         sizes="100vw"
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/45 to-ink/20" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/55 to-ink/30" />
 
       <div className="relative mx-auto max-w-4xl section-x py-16 text-center md:py-20">
         <h2 className="font-display text-balance text-4xl leading-tight md:text-5xl">{p.title}</h2>

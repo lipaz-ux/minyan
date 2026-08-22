@@ -15,7 +15,7 @@ export function Vision() {
         sizes="100vw"
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-ink/80 via-ink/75 to-ink/90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ink/88 via-ink/85 to-ink/94" />
 
       <div className="relative mx-auto max-w-4xl section-x py-16 md:py-24">
         <div className="flex flex-col gap-6">

@@ -15,10 +15,10 @@ export function Founder() {
         sizes="100vw"
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-ink from-40% via-ink/85 via-60% to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-l from-ink from-45% via-ink/92 via-65% to-transparent" />
 
       <div className="relative mx-auto w-full max-w-7xl section-x py-16 md:py-24">
-        <div className="flex flex-col md:max-w-lg">
+        <div className="flex flex-col md:ml-auto md:max-w-lg">
           <p className="text-lg text-accent">{founder.title}</p>
           <h2 className="font-display mt-2 text-balance text-4xl md:text-5xl">{founder.name}</h2>
           <div className="mt-6 flex flex-col gap-5">

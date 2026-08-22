@@ -12,7 +12,7 @@ export function WhatWeDo() {
         sizes="100vw"
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-ink/85 via-ink/80 to-ink/90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ink/90 via-ink/86 to-ink/94" />
 
       <div className="relative mx-auto max-w-4xl section-x py-16 text-center md:py-24">
         <h2 className="font-display text-4xl md:text-6xl">{whatWeDo.title}</h2>

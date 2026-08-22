@@ -84,7 +84,7 @@ export function HorizontalWorlds() {
                 sizes="100vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/45 to-ink/20" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/55 to-ink/30" />
               <div className="relative z-10 flex h-full items-center">
                 <div className="mx-auto w-full max-w-4xl section-x text-center">
                   {slide.kicker && (
