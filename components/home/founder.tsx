@@ -4,26 +4,26 @@ import { siteContent } from '@/lib/site-content'
 export function Founder() {
   const { founder } = siteContent
   return (
-    <section id="about" className="scroll-mt-24 bg-secondary/50 md:scroll-mt-40">
-      <div className="mx-auto grid max-w-7xl items-center gap-10 section-x py-20 md:grid-cols-[minmax(0,0.9fr)_1.1fr] md:gap-16 md:py-28">
-        <div className="relative aspect-[4/5] w-full overflow-hidden bg-secondary">
-          <Image
-            src={founder.image || '/placeholder.svg'}
-            alt={founder.name}
-            fill
-            sizes="(max-width: 768px) 100vw, 40vw"
-            className="object-cover"
-          />
-        </div>
+    <section
+      id="about"
+      className="relative flex min-h-[70vh] scroll-mt-24 items-center overflow-hidden bg-ink text-ink-foreground md:min-h-[85vh] md:scroll-mt-40"
+    >
+      <Image
+        src={founder.image || '/placeholder.svg'}
+        alt={founder.name}
+        fill
+        sizes="100vw"
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-ink from-40% via-ink/85 via-60% to-transparent" />
 
-        <div className="flex flex-col">
+      <div className="relative mx-auto w-full max-w-7xl section-x py-16 md:py-24">
+        <div className="flex flex-col md:max-w-lg">
           <p className="text-lg text-accent">{founder.title}</p>
-          <h2 className="font-display mt-2 text-balance text-4xl text-foreground md:text-5xl">
-            {founder.name}
-          </h2>
+          <h2 className="font-display mt-2 text-balance text-4xl md:text-5xl">{founder.name}</h2>
           <div className="mt-6 flex flex-col gap-5">
             {founder.paragraphs.map((p, i) => (
-              <p key={i} className="text-pretty text-lg leading-relaxed text-muted-foreground">
+              <p key={i} className="text-pretty text-lg leading-relaxed text-ink-foreground/80">
                 {p}
               </p>
             ))}
