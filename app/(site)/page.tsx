@@ -8,7 +8,6 @@ import { PrivateExperiences } from "@/components/home/private-experiences"
 import { Partners } from "@/components/home/partners"
 import { Founder } from "@/components/home/founder"
 import { NewsletterSignup } from "@/components/newsletter-signup"
-import { siteContent } from "@/lib/site-content"
 
 export const metadata: Metadata = {
   title: "מניין — בית לתרבות ויצירה יהודית בועטת",
@@ -37,10 +36,7 @@ export default function HomePage() {
       <Founder />
       <section id="newsletter" className="border-t border-border bg-secondary">
         <div className="mx-auto max-w-2xl px-5 py-20 md:py-28">
-          <NewsletterSignup
-            heading={siteContent.newsletter.heading}
-            body={siteContent.newsletter.body}
-          />
+          <NewsletterSignup />
         </div>
       </section>
     </>

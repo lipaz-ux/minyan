@@ -16,7 +16,9 @@ export default async function EventsPage({
 }) {
   const { category } = await searchParams
   const initialCategory =
-    category && category in CATEGORIES ? (category as CategorySlug) : undefined
+    category && CATEGORIES.some((c) => c.slug === category)
+      ? (category as CategorySlug)
+      : undefined
 
   const upcoming = getPublishedUpcoming()
   const past = getPastEvents()

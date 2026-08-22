@@ -11,7 +11,7 @@ import {
   availableSpots,
   EVENTS,
 } from '@/lib/events'
-import { CATEGORIES } from '@/lib/categories'
+import { categoryLabel } from '@/lib/categories'
 import { formatPrice } from '@/lib/types'
 import { EventRegistrationCta } from '@/components/event-registration-cta'
 
@@ -51,7 +51,7 @@ export default async function EventPage({
   const past = isPast(event)
   const soldOut = isSoldOut(event)
   const spots = availableSpots(event)
-  const category = CATEGORIES[event.category]
+  const categoryDisplayLabel = categoryLabel(event.category)
 
   return (
     <article className="pb-28 md:pb-0">
@@ -70,7 +70,7 @@ export default async function EventPage({
 
       <div className="mx-auto max-w-3xl section-x">
         <header className="-mt-16 relative">
-          <p className="text-accent">{category?.label_he}</p>
+          <p className="text-accent">{categoryDisplayLabel}</p>
           <h1 className="font-display mt-2 text-balance text-4xl leading-tight text-foreground md:text-6xl">
             {event.title_he}
           </h1>
