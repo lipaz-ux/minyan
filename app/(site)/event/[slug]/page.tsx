@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { CalendarDays, Clock, MapPin, Tag } from 'lucide-react'
+import { CalendarDays, MapPin, Tag, User } from 'lucide-react'
 import {
   getEventBySlug,
   formatEventDate,
@@ -55,8 +55,8 @@ export default async function EventPage({
 
   return (
     <article className="pb-28 md:pb-0">
-      {/* Hero */}
-      <div className="relative aspect-[4/5] w-full sm:aspect-[16/9] lg:aspect-[21/9]">
+      {/* Photo band */}
+      <div className="relative h-[42vh] w-full overflow-hidden md:h-[56vh]">
         <Image
           src={event.hero_image || '/placeholder.svg'}
           alt={event.title_he}
@@ -65,101 +65,92 @@ export default async function EventPage({
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/35 via-ink/50 to-ink/90" />
       </div>
 
-      <div className="mx-auto max-w-3xl section-x">
-        <header className="-mt-16 relative">
-          <p className="text-accent">{categoryDisplayLabel}</p>
-          <h1 className="font-display mt-2 text-balance text-4xl leading-tight text-foreground md:text-6xl">
+      <div className="relative z-10 mx-auto -mt-24 max-w-5xl section-x md:-mt-32">
+        <header className="text-center">
+          <p className="text-sm font-medium tracking-wide text-accent">{categoryDisplayLabel}</p>
+          <h1 className="font-display mt-3 text-balance text-4xl leading-tight text-ink-foreground md:text-6xl">
             {event.title_he}
           </h1>
-          <p className="mt-4 text-pretty text-xl leading-relaxed text-muted-foreground">
-            {event.short_description_he}
-          </p>
         </header>
 
-        {/* Key facts */}
-        <dl className="mt-10 grid gap-6 border-y border-border py-8 sm:grid-cols-2">
-          <Fact icon={<CalendarDays className="size-5" />} label="תאריך">
-            {formatEventDate(event.start_date)}
-          </Fact>
-          <Fact icon={<Clock className="size-5" />} label="שעה">
-            {event.start_time}
-            {event.end_time ? `–${event.end_time}` : ''}
-          </Fact>
-          <Fact icon={<MapPin className="size-5" />} label="מיקום">
-            {event.location_name}
-            {event.address ? ` · ${event.address}` : ''}
-          </Fact>
-          <Fact icon={<Tag className="size-5" />} label="מחיר">
-            {formatPrice(event.price)}
-          </Fact>
-        </dl>
+        <div className="mt-14 grid gap-12 md:grid-cols-[280px_1fr] md:gap-16">
+          {/* Sticky facts + CTA sidebar */}
+          <aside className="flex flex-col gap-6 border border-border bg-card p-7 md:sticky md:top-48 md:self-start">
+            {!past && (
+              <div>
+                <p className="font-display text-3xl text-foreground">{formatPrice(event.price)}</p>
+                {event.show_remaining_capacity && spots !== null && !soldOut && (
+                  <p className="mt-1 text-sm text-accent">נשארו {spots} מקומות</p>
+                )}
+              </div>
+            )}
 
-        {!past && event.show_remaining_capacity && spots !== null && !soldOut && (
-          <p className="mt-6 text-accent">נשארו {spots} מקומות</p>
-        )}
+            <Fact icon={<CalendarDays className="size-4" />} label="תאריך ושעה">
+              {formatEventDate(event.start_date)}
+              {event.start_time ? `, ${event.start_time}` : ''}
+              {event.end_time ? `–${event.end_time}` : ''}
+            </Fact>
+            <Fact icon={<MapPin className="size-4" />} label="מיקום">
+              {event.location_name}
+              {event.address ? ` · ${event.address}` : ''}
+              {event.city ? `, ${event.city}` : ''}
+              {event.google_maps_url && (
+                <a
+                  href={event.google_maps_url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-1 block text-sm text-foreground underline underline-offset-4"
+                >
+                  פתיחה ב־Google Maps
+                </a>
+              )}
+            </Fact>
+            {event.facilitator && (
+              <Fact icon={<User className="size-4" />} label="בהנחיית">
+                {event.facilitator}
+              </Fact>
+            )}
+            <Fact icon={<Tag className="size-4" />} label="קטגוריה">
+              {categoryDisplayLabel}
+            </Fact>
 
-        {/* Desktop / inline CTA */}
-        <div className="mt-8">
-          <EventRegistrationCta event={event} variant="inline" />
-        </div>
+            {!past && (
+              <div className="pt-2">
+                <EventRegistrationCta event={event} variant="inline" />
+              </div>
+            )}
+          </aside>
 
-        {/* About */}
-        <section className="mt-14">
-          <h2 className="text-2xl text-foreground md:text-3xl">על האירוע</h2>
-          <div className="mt-5 space-y-4 text-lg leading-relaxed text-foreground/90">
-            {event.full_description_he.split('\n\n').map((p, i) => (
-              <p key={i} className="text-pretty">
-                {p}
-              </p>
-            ))}
-          </div>
-        </section>
-
-        {event.facilitator && (
-          <section className="mt-12">
-            <h2 className="text-2xl text-foreground md:text-3xl">בהנחיית</h2>
-            <p className="mt-4 text-lg leading-relaxed text-foreground/90">
-              {event.facilitator}
+          {/* Article */}
+          <div className="max-w-[62ch]">
+            <p className="font-display text-xl leading-relaxed text-foreground md:text-2xl">
+              {event.short_description_he}
             </p>
-          </section>
-        )}
+            <div className="mt-6 flex flex-col gap-5 text-lg leading-relaxed text-muted-foreground">
+              {event.full_description_he.split('\n\n').map((p, i) => (
+                <p key={i} className="text-pretty">
+                  {p}
+                </p>
+              ))}
+            </div>
 
-        <section className="mt-12">
-          <h2 className="text-2xl text-foreground md:text-3xl">איפה נפגשים</h2>
-          <p className="mt-4 text-lg leading-relaxed text-foreground/90">
-            {event.location_name}
-            {event.address ? `, ${event.address}` : ''}
-            {event.city ? `, ${event.city}` : ''}
-          </p>
-          {event.google_maps_url && (
-            <a
-              href={event.google_maps_url}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-3 inline-block text-foreground underline underline-offset-4"
-            >
-              פתיחה ב־Google Maps
-            </a>
-          )}
-        </section>
-
-        <div className="mt-16 border-t border-border pt-8">
-          <Link
-            href="/events"
-            className="text-lg text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
-          >
-            → לכל האירועים
-          </Link>
+            <div className="mt-14 border-t border-border pt-8">
+              <Link
+                href="/events"
+                className="text-lg text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
+              >
+                → לכל האירועים
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Sticky mobile CTA */}
-      {!past && (
-        <EventRegistrationCta event={event} variant="sticky-mobile" />
-      )}
+      {!past && <EventRegistrationCta event={event} variant="sticky-mobile" />}
     </article>
   )
 }
@@ -177,8 +168,8 @@ function Fact({
     <div className="flex items-start gap-3">
       <span className="mt-1 text-accent">{icon}</span>
       <div>
-        <dt className="text-sm text-muted-foreground">{label}</dt>
-        <dd className="mt-0.5 text-lg text-foreground">{children}</dd>
+        <div className="text-xs text-muted-foreground">{label}</div>
+        <div className="mt-0.5 text-[15px] text-foreground">{children}</div>
       </div>
     </div>
   )
