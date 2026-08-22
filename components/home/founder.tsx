@@ -13,7 +13,7 @@ export function Founder() {
         alt={founder.name}
         fill
         sizes="100vw"
-        className="object-cover"
+        className="object-cover object-[35%_65%]"
       />
       <div className="absolute inset-0 bg-gradient-to-l from-ink from-30% via-ink/70 via-45% to-transparent" />
 
