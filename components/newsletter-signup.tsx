@@ -82,7 +82,7 @@ export function NewsletterSignup() {
             <button
               type="submit"
               disabled={pending}
-              className="mt-2 inline-flex items-center justify-center rounded-sm bg-foreground px-7 py-3.5 text-lg text-ink-foreground transition-colors hover:bg-accent hover:text-accent-foreground disabled:opacity-60"
+              className="mt-2 inline-flex items-center justify-center rounded-sm bg-foreground px-7 py-3.5 text-lg text-ink transition-colors hover:bg-accent hover:text-accent-foreground disabled:opacity-60"
             >
               {pending ? 'רגע...' : 'הרשמה'}
             </button>

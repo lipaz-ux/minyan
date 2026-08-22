@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function RegulationsPage() {
   return (
-    <div className="mx-auto max-w-2xl section-x py-16 md:py-24">
+    <div className="mx-auto max-w-2xl section-x pt-28 pb-16 md:pt-48 md:pb-24">
       <h1 className="font-display text-balance text-4xl leading-tight text-foreground md:text-5xl">
         תקנון
       </h1>

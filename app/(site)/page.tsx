@@ -3,7 +3,7 @@ import { Hero } from "@/components/home/hero"
 import { Vision } from "@/components/home/vision"
 import { WhatWeDo } from "@/components/home/what-we-do"
 import { Worlds } from "@/components/home/worlds"
-import { UpcomingEvents } from "@/components/home/upcoming-events"
+import { HorizontalWorlds } from "@/components/home/horizontal-worlds"
 import { PrivateExperiences } from "@/components/home/private-experiences"
 import { Partners } from "@/components/home/partners"
 import { Founder } from "@/components/home/founder"
@@ -28,9 +28,13 @@ export default function HomePage() {
     <>
       <Hero />
       <Vision />
-      <WhatWeDo />
-      <Worlds />
-      <UpcomingEvents />
+      <div id="what-we-do" className="scroll-mt-24 md:scroll-mt-40">
+        <div className="md:hidden">
+          <WhatWeDo />
+          <Worlds />
+        </div>
+        <HorizontalWorlds />
+      </div>
       <PrivateExperiences />
       <Partners />
       <Founder />

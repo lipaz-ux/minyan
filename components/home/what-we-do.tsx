@@ -4,10 +4,7 @@ import { siteContent } from '@/lib/site-content'
 export function WhatWeDo() {
   const { whatWeDo } = siteContent
   return (
-    <section
-      id={whatWeDo.id}
-      className="relative scroll-mt-24 overflow-hidden bg-ink text-ink-foreground"
-    >
+    <section className="relative overflow-hidden bg-ink text-ink-foreground">
       <Image
         src="/images/section-whatwedo-bg.jpg"
         alt=""

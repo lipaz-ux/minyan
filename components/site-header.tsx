@@ -4,18 +4,9 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { NAV_LINKS, siteContent } from '@/lib/site-content'
-import { cn } from '@/lib/utils'
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
@@ -25,15 +16,8 @@ export function SiteHeader() {
   }, [open])
 
   return (
-    <header
-      className={cn(
-        'fixed inset-x-0 top-0 z-50 transition-colors duration-300',
-        scrolled || open
-          ? 'bg-background/95 backdrop-blur-sm border-b border-border'
-          : 'bg-transparent',
-      )}
-    >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between section-x md:h-20">
+    <header className="fixed inset-x-0 top-0 z-50 bg-transparent">
+      <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between section-x md:h-40">
         {/* Wordmark (right side in RTL) */}
         <Link
           href="/"
@@ -65,19 +49,17 @@ export function SiteHeader() {
             href={siteContent.donate.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full border border-accent px-4 py-1.5 text-[15px] text-accent transition-colors hover:bg-accent hover:text-accent-foreground"
+            className="font-display rounded-full border border-foreground px-4 py-1.5 text-[15px] text-foreground transition-colors hover:bg-foreground hover:text-ink"
           >
             {siteContent.donate.label}
           </a>
+          <Link
+            href="/events"
+            className="font-display rounded-full border border-foreground px-4 py-1.5 text-[15px] text-foreground transition-colors hover:bg-foreground hover:text-ink"
+          >
+            לאירועים הקרובים
+          </Link>
         </nav>
-
-        {/* Desktop CTA */}
-        <Link
-          href="/events"
-          className="hidden rounded-sm border border-foreground px-5 py-2 text-[15px] text-foreground transition-colors hover:bg-foreground hover:text-ink-foreground md:inline-flex"
-        >
-          לאירועים הקרובים
-        </Link>
 
         {/* Mobile toggle */}
         <button
@@ -120,14 +102,14 @@ export function SiteHeader() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className="py-4 text-lg text-accent"
+              className="py-4 text-lg text-foreground"
             >
               {siteContent.donate.label}
             </a>
             <Link
               href="/events"
               onClick={() => setOpen(false)}
-              className="mt-6 inline-flex items-center justify-center rounded-sm bg-foreground px-5 py-3.5 text-lg text-ink-foreground"
+              className="mt-6 inline-flex items-center justify-center rounded-sm bg-foreground px-5 py-3.5 text-lg text-ink"
             >
               לאירועים הקרובים
             </Link>

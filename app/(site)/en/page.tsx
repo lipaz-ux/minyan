@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function EnglishPage() {
   return (
-    <div dir="ltr" className="mx-auto max-w-2xl section-x py-20 text-center md:py-28">
+    <div dir="ltr" className="mx-auto max-w-2xl section-x pt-32 pb-20 text-center md:pt-52 md:pb-28">
       <h1 className="font-display text-balance text-4xl leading-tight text-foreground md:text-5xl">
         English version coming soon
       </h1>

@@ -19,7 +19,7 @@ export default async function ConfirmationPage({
   if (!event) notFound()
 
   return (
-    <div className="mx-auto max-w-xl section-x py-20 text-center md:py-28">
+    <div className="mx-auto max-w-xl section-x pt-32 pb-20 text-center md:pt-52 md:pb-28">
       <p className="font-display text-5xl text-foreground md:text-6xl">נתראה במניין ✨</p>
       <p className="mt-6 text-pretty text-xl leading-relaxed text-muted-foreground">
         נרשמת בהצלחה ל־<span className="text-foreground">{event.title_he}</span>

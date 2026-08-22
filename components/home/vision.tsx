@@ -6,7 +6,7 @@ export function Vision() {
   return (
     <section
       id={vision.id}
-      className="relative scroll-mt-24 overflow-hidden bg-ink text-ink-foreground"
+      className="relative scroll-mt-24 overflow-hidden bg-ink text-ink-foreground md:scroll-mt-40"
     >
       <Image
         src="/images/section-vision-bg.jpg"

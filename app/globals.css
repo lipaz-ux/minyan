@@ -80,30 +80,32 @@
 }
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 
-  /* MINYAN palette: warm cream, ink near-black, candlelight gold accent */
+  /* MINYAN palette: warm cream, ink near-black, candlelight gold accent.
+     Base is black (matches minyantlv.com, which renders on a pure-black
+     body throughout) with cream foreground — not a light theme. */
   --cream: #f7f4f0;
   --ink: #1c1a17;
   --ink-foreground: #f7f4f0;
 
-  --background: #f7f4f0;
-  --foreground: #222222;
-  --card: #ffffff;
-  --card-foreground: #222222;
-  --popover: #ffffff;
-  --popover-foreground: #222222;
-  --primary: #1c1a17;
-  --primary-foreground: #f7f4f0;
-  --secondary: #efe9e1;
-  --secondary-foreground: #1c1a17;
-  --muted: #efe9e1;
-  --muted-foreground: #6b655c;
+  --background: #000000;
+  --foreground: #f7f4f0;
+  --card: #141210;
+  --card-foreground: #f7f4f0;
+  --popover: #141210;
+  --popover-foreground: #f7f4f0;
+  --primary: #f7f4f0;
+  --primary-foreground: #1c1a17;
+  --secondary: #201d18;
+  --secondary-foreground: #f7f4f0;
+  --muted: #1c1916;
+  --muted-foreground: #a39c8f;
   --accent: #a9752b;
   --accent-foreground: #f7f4f0;
-  --destructive: #a3382b;
-  --border: #e3ddd3;
-  --input: #e3ddd3;
+  --destructive: #c14a3a;
+  --border: #2a2620;
+  --input: #2a2620;
   --ring: #a9752b;
   --chart-1: #a9752b;
   --chart-2: #6b655c;

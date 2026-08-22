@@ -25,7 +25,7 @@ export default async function RegisterPage({
   const waitlist = waitlistParam === '1'
 
   return (
-    <div className="mx-auto max-w-2xl section-x py-14 md:py-20">
+    <div className="mx-auto max-w-2xl section-x pt-28 pb-14 md:pt-44 md:pb-20">
       <Link
         href={`/event/${event.slug}`}
         className="text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"

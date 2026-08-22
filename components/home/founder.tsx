@@ -4,7 +4,7 @@ import { siteContent } from '@/lib/site-content'
 export function Founder() {
   const { founder } = siteContent
   return (
-    <section id="about" className="scroll-mt-24 bg-secondary/50">
+    <section id="about" className="scroll-mt-24 bg-secondary/50 md:scroll-mt-40">
       <div className="mx-auto grid max-w-7xl items-center gap-10 section-x py-20 md:grid-cols-[minmax(0,0.9fr)_1.1fr] md:gap-16 md:py-28">
         <div className="relative aspect-[4/5] w-full overflow-hidden bg-secondary">
           <Image
