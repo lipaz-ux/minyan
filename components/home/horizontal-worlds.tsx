@@ -73,11 +73,12 @@ export function HorizontalWorlds() {
       className="relative hidden md:block"
       style={{ height: `${slides.length * 80}vh` }}
     >
-      <div
-        ref={stickyRef}
-        className="sticky top-1/2 h-[70vh] max-h-[680px] min-h-[440px] -translate-y-1/2 overflow-hidden"
-      >
-        <div ref={trackRef} dir="ltr" className="flex h-full w-full will-change-transform">
+      <div ref={stickyRef} className="sticky top-0 flex h-screen items-center overflow-hidden">
+        <div
+          ref={trackRef}
+          dir="ltr"
+          className="flex h-[70vh] max-h-[680px] min-h-[440px] w-full will-change-transform"
+        >
           {slides.map((slide) => (
             <div key={slide.key} dir="rtl" className="relative h-full w-full shrink-0">
               <Image
