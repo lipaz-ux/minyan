@@ -14,7 +14,7 @@ export function WhatWeDo() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-ink/85 via-ink/80 to-ink/90" />
 
-      <div className="relative mx-auto max-w-4xl section-x py-24 text-center md:py-32">
+      <div className="relative mx-auto max-w-4xl section-x py-16 text-center md:py-24">
         <h2 className="font-display text-4xl md:text-6xl">{whatWeDo.title}</h2>
         <p className="mx-auto mt-8 max-w-3xl text-balance text-2xl leading-snug md:text-3xl">
           {whatWeDo.lead}

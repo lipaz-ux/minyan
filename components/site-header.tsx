@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
@@ -19,13 +20,15 @@ export function SiteHeader() {
     <header className="fixed inset-x-0 top-0 z-50 bg-transparent">
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between section-x md:h-40">
         {/* Wordmark (right side in RTL) */}
-        <Link
-          href="/"
-          onClick={() => setOpen(false)}
-          className="font-display text-2xl leading-none tracking-tight text-foreground md:text-3xl"
-          aria-label="מניין — לעמוד הבית"
-        >
-          מניין
+        <Link href="/" onClick={() => setOpen(false)} aria-label="מניין — לעמוד הבית">
+          <Image
+            src="/images/minyan-logo-white.png"
+            alt="מניין"
+            width={1344}
+            height={695}
+            priority
+            className="h-7 w-auto md:h-9"
+          />
         </Link>
 
         {/* Desktop nav */}
@@ -60,6 +63,16 @@ export function SiteHeader() {
             לאירועים הקרובים
           </Link>
         </nav>
+
+        {/* Icon mark (left side in RTL, desktop only) */}
+        <Image
+          src="/images/minyan-icon.png"
+          alt=""
+          width={480}
+          height={480}
+          className="hidden h-9 w-9 md:block"
+          aria-hidden="true"
+        />
 
         {/* Mobile toggle */}
         <button

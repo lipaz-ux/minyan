@@ -38,6 +38,7 @@ const slides: Slide[] = [
 
 export function HorizontalWorlds() {
   const wrapperRef = useRef<HTMLDivElement>(null)
+  const stickyRef = useRef<HTMLDivElement>(null)
   const trackRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -47,10 +48,11 @@ export function HorizontalWorlds() {
       raf = requestAnimationFrame(() => {
         raf = 0
         const wrapper = wrapperRef.current
+        const sticky = stickyRef.current
         const track = trackRef.current
-        if (!wrapper || !track) return
+        if (!wrapper || !sticky || !track) return
         const rect = wrapper.getBoundingClientRect()
-        const total = wrapper.offsetHeight - window.innerHeight
+        const total = wrapper.offsetHeight - sticky.offsetHeight
         const progress = total > 0 ? Math.min(1, Math.max(0, -rect.top / total)) : 0
         track.style.transform = `translateX(-${progress * (slides.length - 1) * 100}%)`
       })
@@ -69,9 +71,12 @@ export function HorizontalWorlds() {
     <section
       ref={wrapperRef}
       className="relative hidden md:block"
-      style={{ height: `${slides.length * 100}vh` }}
+      style={{ height: `${slides.length * 80}vh` }}
     >
-      <div className="sticky top-0 h-screen overflow-hidden bg-background">
+      <div
+        ref={stickyRef}
+        className="sticky top-1/2 h-[70vh] max-h-[680px] min-h-[440px] -translate-y-1/2 overflow-hidden"
+      >
         <div ref={trackRef} dir="ltr" className="flex h-full w-full will-change-transform">
           {slides.map((slide) => (
             <div key={slide.key} dir="rtl" className="relative h-full w-full shrink-0">
@@ -86,25 +91,25 @@ export function HorizontalWorlds() {
               <div className="relative z-10 flex h-full items-center">
                 <div className="mx-auto w-full max-w-4xl section-x text-center">
                   {slide.kicker && (
-                    <p className="text-xl leading-relaxed text-ink-foreground/90 md:text-2xl">
+                    <p className="text-lg leading-relaxed text-ink-foreground/90 md:text-xl">
                       {slide.kicker}
                     </p>
                   )}
-                  <h2 className="font-display mt-4 text-balance text-4xl text-ink-foreground md:text-6xl">
+                  <h2 className="font-display mt-3 text-balance text-3xl text-ink-foreground md:text-5xl">
                     {slide.title}
                   </h2>
-                  <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-ink-foreground/80">
+                  <p className="mx-auto mt-4 max-w-2xl text-pretty text-base leading-relaxed text-ink-foreground/80 md:text-lg">
                     {slide.body}
                   </p>
                   {slide.footer && (
-                    <p className="font-display mt-8 text-3xl text-cream md:text-4xl">
+                    <p className="font-display mt-5 text-2xl text-cream md:text-3xl">
                       {slide.footer}
                     </p>
                   )}
                   {slide.cta && (
                     <Link
                       href={slide.cta.href}
-                      className="font-display mt-9 inline-flex items-center justify-center rounded-full border border-cream px-6 py-3 text-lg text-cream transition-colors hover:bg-cream hover:text-ink"
+                      className="font-display mt-6 inline-flex items-center justify-center rounded-full border border-cream px-6 py-3 text-lg text-cream transition-colors hover:bg-cream hover:text-ink"
                     >
                       {slide.cta.label}
                     </Link>
