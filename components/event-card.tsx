@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { MapPin } from 'lucide-react'
 import type { EventRecord } from '@/lib/types'
 import { categoryLabel } from '@/lib/categories'
 import { formatEventDateShort, isSoldOut, isPast } from '@/lib/events'
@@ -12,48 +11,38 @@ export function EventCard({ event }: { event: EventRecord }) {
   return (
     <Link
       href={`/event/${event.slug}`}
-      className="group flex flex-col focus:outline-none"
+      className="group relative flex aspect-[4/5] w-full overflow-hidden bg-ink focus:outline-none"
     >
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-secondary">
-        <Image
-          src={event.hero_image || '/placeholder.svg'}
-          alt={event.title_he}
-          fill
-          sizes="(max-width: 768px) 100vw, 33vw"
-          className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-        />
-        {(soldOut || past) && (
-          <span className="absolute end-3 top-3 rounded-sm bg-ink/85 px-3 py-1 text-xs text-ink-foreground">
-            {past ? 'אירוע שהיה' : 'אזל'}
-          </span>
-        )}
-      </div>
+      <Image
+        src={event.hero_image || '/placeholder.svg'}
+        alt={event.title_he}
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/92 via-ink/45 to-transparent" />
 
-      <div className="flex flex-1 flex-col pt-4">
-        <div className="flex items-center gap-3 text-sm text-muted-foreground">
-          <span>{formatEventDateShort(event.start_date)}</span>
-          <span aria-hidden>·</span>
-          <span>{categoryLabel(event.category)}</span>
-        </div>
+      {(soldOut || past) && (
+        <span className="absolute end-4 top-4 rounded-full border border-ink-foreground/70 px-3 py-1 text-xs text-ink-foreground">
+          {past ? 'אירוע שהיה' : 'אזל'}
+        </span>
+      )}
 
-        <h3 className="mt-2 text-balance text-2xl leading-tight text-foreground transition-colors group-hover:text-accent">
+      <div className="relative mt-auto flex flex-col p-6">
+        <p className="text-sm font-medium tracking-wide text-accent">{categoryLabel(event.category)}</p>
+        <h3 className="font-display mt-2 text-balance text-3xl leading-tight text-ink-foreground">
           {event.title_he}
         </h3>
-
-        <p className="mt-2 line-clamp-2 leading-relaxed text-muted-foreground">
-          {event.short_description_he}
-        </p>
-
-        <div className="mt-3 flex items-center gap-1.5 text-sm text-muted-foreground">
-          <MapPin className="size-4 shrink-0" />
+        <div className="mt-3 flex items-center gap-2 text-sm text-ink-foreground/75">
+          <span>{formatEventDateShort(event.start_date)}</span>
+          <span aria-hidden>·</span>
           <span className="truncate">{event.location_name}</span>
         </div>
-
-        <div className="mt-4 flex items-center justify-between pt-1">
-          <span className="text-sm text-foreground">
+        <div className="mt-5 flex items-center justify-between">
+          <span className="text-sm text-ink-foreground">
             {event.price > 0 ? `${event.price} ₪` : 'ללא עלות'}
           </span>
-          <span className="text-sm text-foreground underline-offset-4 group-hover:underline">
+          <span className="text-sm text-ink-foreground underline-offset-4 group-hover:underline">
             {past ? 'לצפייה באירוע' : 'לפרטים והרשמה'}
           </span>
         </div>
