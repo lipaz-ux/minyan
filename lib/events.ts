@@ -22,7 +22,7 @@ export const EVENTS: EventRecord[] = [
       'ארוחת שבת חגיגית בלוקיישן מיוחד בלב תל אביב, עם אוכל יוצא דופן, יין וניגונים.',
     full_description_he:
       'מניין מזמינים אתכם לחוות ארוחת שבת מסוג חדש. אפשר להגיע עם חברים או לבד, להיפגש איתנו בלוקיישן לא שגרתי בלב העיר, לטעום אוכל יוצא דופן, לנוח מהשבוע שהיה ולהכיר אנשים חדשים על כוס יין. חוויה שמשלבת בין קודש וחול, בין מזרח ומערב, ובין עיר למסורת.',
-    hero_image: '/images/shabbat.png',
+    hero_image: '/images/shabbat.jpg',
     category: 'shabbat',
     tags: ['שבת', 'ארוחה', 'קהילה'],
     start_date: iso(6),
@@ -50,7 +50,7 @@ export const EVENTS: EventRecord[] = [
       'ערב לימוד וחברותא סביב טקסטים, שירים וסיפורים ששופכים אור על החיים בעיר.',
     full_description_he:
       'עם הספר מחפש משמעות, ואנחנו במניין מבקשים להעמיק בטקסטים, שירים וסיפורים ששופכים אור ומאתגרים את המציאות של העיר הגדולה. בית המדרש של מניין הוא הזדמנות לקרוא, לחשוב, ולהסתכל במראה דרך האותיות — לגלות את עצמנו בתוך טקסט קאנוני בן אלפיים שנה ולהתרגש משיר בן עשור, באותה המידה בדיוק.',
-    hero_image: '/images/beit-midrash.png',
+    hero_image: '/images/beit-midrash.jpg',
     category: 'beit-midrash',
     tags: ['לימוד', 'חברותא'],
     start_date: iso(13),
@@ -106,8 +106,8 @@ export const EVENTS: EventRecord[] = [
       'ארוחת שבת קסומה בערב קיץ, שהתקיימה בחצר סוד בלב תל אביב.',
     full_description_he:
       'ערב שבת קסום שהתקיים בחצר נסתרת בלב העיר, עם שולחן ארוך, נרות, יין וניגונים עד השעות הקטנות של הלילה.',
-    hero_image: '/images/hero-shabbat-table.png',
-    gallery: ['/images/shabbat.png', '/images/hero-shabbat-table.png'],
+    hero_image: '/images/hero-shabbat-table.jpg',
+    gallery: ['/images/shabbat.jpg', '/images/hero-shabbat-table.jpg'],
     category: 'shabbat',
     start_date: iso(-24),
     start_time: '19:30',
@@ -127,8 +127,8 @@ export const EVENTS: EventRecord[] = [
       'התכנסות רוח לציון ראש חודש, עם לימוד, שירה ומעגל שיח.',
     full_description_he:
       'התכנסנו לציון ראש חודש עם לימוד קצר, שירה במעגל ומעגל שיח על התחדשות. ערב של חיבור ושקט בתוך רעש העיר.',
-    hero_image: '/images/gatherings.png',
-    gallery: ['/images/gatherings.png'],
+    hero_image: '/images/gatherings.jpg',
+    gallery: ['/images/gatherings.jpg'],
     category: 'gatherings',
     start_date: iso(-40),
     start_time: '20:00',

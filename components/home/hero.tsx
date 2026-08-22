@@ -7,7 +7,7 @@ export function Hero() {
   return (
     <section className="relative flex min-h-[92vh] items-end overflow-hidden">
       <Image
-        src="/images/hero-shabbat-table.png"
+        src="/images/hero-shabbat-table.jpg"
         alt="שולחן ארוחת שבת מואר בנרות בתל אביב"
         fill
         priority

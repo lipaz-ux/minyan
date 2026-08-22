@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: "מניין — בית לתרבות ויצירה יהודית בועטת",
     description:
       "בית לתרבות ויצירה יהודית בתל אביב — ארוחות שבת, בתי מדרש והתכנסויות.",
-    images: ["/images/hero-shabbat-table.png"],
+    images: ["/images/hero-shabbat-table.jpg"],
     locale: "he_IL",
     type: "website",
   },
