@@ -5,17 +5,17 @@ import { siteContent } from '@/lib/site-content'
 export function PrivateExperiences() {
   const { private: p } = siteContent
   return (
-    <section className="relative overflow-hidden bg-ink text-ink-foreground">
+    <section className="relative flex min-h-[50vh] items-center overflow-hidden bg-ink text-ink-foreground md:min-h-[60vh]">
       <Image
-        src="/images/section-private-bg.jpg"
+        src="/images/beit-midrash.jpg"
         alt=""
         fill
         sizes="100vw"
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-ink/85 via-ink/80 to-ink/90" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/45 to-ink/20" />
 
-      <div className="relative mx-auto max-w-4xl section-x py-16 text-center md:py-24">
+      <div className="relative mx-auto max-w-4xl section-x py-16 text-center md:py-20">
         <h2 className="font-display text-balance text-4xl leading-tight md:text-5xl">{p.title}</h2>
         <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-ink-foreground/75">
           {p.body}
