@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Hero } from "@/components/home/hero"
+import { VisionStatement } from "@/components/home/vision-statement"
 import { Vision } from "@/components/home/vision"
 import { WhatWeDo } from "@/components/home/what-we-do"
 import { Worlds } from "@/components/home/worlds"
@@ -27,6 +28,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <VisionStatement />
       <Vision />
       <div id="what-we-do" className="scroll-mt-24 md:scroll-mt-40">
         <div className="md:hidden">
