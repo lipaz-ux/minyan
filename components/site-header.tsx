@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
-import { NAV_LINKS } from '@/lib/site-content'
+import { NAV_LINKS, siteContent } from '@/lib/site-content'
 import { cn } from '@/lib/utils'
 
 export function SiteHeader() {
@@ -61,6 +61,14 @@ export function SiteHeader() {
           >
             English
           </Link>
+          <a
+            href={siteContent.donate.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full border border-accent px-4 py-1.5 text-[15px] text-accent transition-colors hover:bg-accent hover:text-accent-foreground"
+          >
+            {siteContent.donate.label}
+          </a>
         </nav>
 
         {/* Desktop CTA */}
@@ -107,6 +115,15 @@ export function SiteHeader() {
             >
               English
             </Link>
+            <a
+              href={siteContent.donate.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="py-4 text-lg text-accent"
+            >
+              {siteContent.donate.label}
+            </a>
             <Link
               href="/events"
               onClick={() => setOpen(false)}

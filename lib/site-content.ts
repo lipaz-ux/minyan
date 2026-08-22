@@ -6,7 +6,12 @@ export const siteContent = {
   brand: {
     name: 'מניין',
     email: 'hey@minyantlv.com',
-    instagram: 'https://www.instagram.com/minyan.tlv',
+    instagram: 'https://www.instagram.com/minyan_tlv',
+  },
+
+  donate: {
+    label: 'לתרומה',
+    href: 'https://meshulam.co.il/purchase?b=74cb71d53cf4de8e2673461126ee4c6e',
   },
 
   hero: {
