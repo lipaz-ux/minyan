@@ -15,7 +15,7 @@ export function Founder() {
         sizes="100vw"
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-l from-ink from-45% via-ink/92 via-65% to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-l from-ink from-30% via-ink/70 via-45% to-transparent" />
 
       <div className="relative mx-auto w-full max-w-7xl section-x py-16 md:py-24">
         <div className="flex flex-col md:ml-auto md:max-w-lg">
